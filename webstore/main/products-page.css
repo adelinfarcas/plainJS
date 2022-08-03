@@ -1,0 +1,66 @@
+.product-card {
+  flex: 1 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.product-card img {
+  max-height: 301px;
+  object-fit: contain;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-around;
+  flex: 0 1 auto;
+}
+
+.filters {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.pagination {
+  align-self: flex-end;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+.favorites-btn:hover {
+  cursor: pointer;
+}
+
+.lds-ellipsis {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.lds-ellipsis div {
+  background: rgb(44, 125, 56);
+  width: 17px;
+  height: 17px;
+}
+
+.overlay {
+  position: relative;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}
+
+.overlay:after {
+  content: "";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(44, 125, 56, 0.303);
+}

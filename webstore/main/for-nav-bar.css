@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+.container-promo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f20000;
+  color: #ffffff;
+  padding: 5px;
+  font-family: "Bebas Neue", cursive;
+  /* font-size: 16px; */
+  /* font-weight: 200; */
+  gap: 2rem;
+}
+
+.btn-promo {
+  border: 2px solid #ffffff;
+  border-radius: 0;
+  padding: 2px 30px;
+  margin: 0;
+  /* font-size: 14px; */
+}
+
+.navbar {
+  font-family: "Bebas Neue", cursive;
+  /* font-size: 18px; */
+}
+.promo-text {
+  text-align: center;
+  vertical-align: center;
+}
