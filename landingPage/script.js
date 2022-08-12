@@ -438,9 +438,9 @@ class Contact extends HTMLElement {
         <div class="title fs-2 fw-light mb-3 bg-transparent">Contact</div>
         <div class="content fs-6 fw-light lh-lg">
           <div class="container p-0 bg-transparent">
-            <div class="row flex-row">
+            <div class="row flex-row gap-3">
               <div
-                class="col-md-6 d-flex justify-content-start align-items-center px-5"
+                class="col-md-5 d-flex justify-content-center justify-content-md-start align-items-center px-5"
               >
                 <i class="bi bi-envelope-paper display-1"></i>
               </div>
@@ -478,7 +478,7 @@ class Contact extends HTMLElement {
                 >
                   <i class="bi bi-telephone fs-1"></i>
 
-                  <a href="tel:+40758709052" class="link-dark link"
+                  <a href="tel:+40758709052" class="link-dark link fs-4 fw-lighter"
                     >+40 758 709 052</a
                   >
                 </div>
@@ -486,7 +486,7 @@ class Contact extends HTMLElement {
                   class="tel d-flex flex-row align-items-center justify-content-between px-5"
                 >
                   <i class="bi bi-envelope fs-1"></i>
-                  <a href="mailto:fvadelin@gmail.com" class="link-dark link"
+                  <a href="mailto:fvadelin@gmail.com" class="link-dark link fs-4 fw-lighter"
                     >fvadelin@gmail.com</a
                   >
                 </div>
