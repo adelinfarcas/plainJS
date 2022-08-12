@@ -46,3 +46,12 @@ body {
   -moz-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
 }
+
+.bi-envelope-paper,
+.bi-linkedin {
+  font-size: 120px;
+}
+
+.link {
+  text-decoration: none;
+}

@@ -1,27 +1,16 @@
-let state = {
-  aboutMe: {
-    title: "Despre mine",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,voluptas doloremque? Maxime totam possimus minima excepturi quos doloremque quidem iure quaerat aliquid, accusantium dolorem odio eum! Quia ullam iste quae quaerat adipisci et, dolore voluptas porro unde labore, cumque ea quo, deserunt laboriosam praesentium aliquam qui voluptatibus mollitia",
-  },
-  cv: {
-    title: "CV",
-    content: "Continut CV",
-  },
-  projects: {
-    title: "",
-    content: "",
-  },
-  contact: {
-    title: "",
-    content: "",
-  },
-};
-
 let draw = (tab) => {
   let row = document.querySelector(".row.p-3");
   row.innerHTML = `<${tab}><${tab}/>`;
+  let navLinkItems = document.querySelectorAll(".nav-link");
+  for (let item of navLinkItems) {
+    item.classList.remove("active");
+    item.addEventListener("click", () => {
+      item.classList.add("active");
+    });
+  }
 };
+
+// HTML Components
 
 class MyCV extends HTMLElement {
   connectedCallback() {
@@ -36,7 +25,13 @@ class MyCV extends HTMLElement {
     <div class="location fw-light">Cluj-Napoca, Romania</div>
   </div>
     <div class="col-12 p-3 content">
-    <div class="title fs-2 fw-light mb-3 bg-transparent">CV</div>
+    <div class="d-flex flex-row justify-content-between align-items-center px-3">
+        <div class="title fs-2 fw-light mb-3 bg-transparent">CV</div>
+        <button class="btn btn-outline-primary">
+            <i class="bi bi-file-earmark-pdf"></i>
+            Download as PDF
+        </button>
+    </div>
     <div class="content fs-6 fw-light lh-lg">
       <div class="container p-0 bg-transparent">
         <div class="col-md">
@@ -62,6 +57,16 @@ class MyCV extends HTMLElement {
                     <div>Scoala Informala de IT</div>
                     <div>Feb 2022 - Jun 2022</div>
                     <div>Cluj-Napoca</div>
+                    <div>
+                        <ul>
+                            <li>HTML5, and CSS3: how to build a User Interface</li>
+                            <li>JavaScript: how to use variables, functions, objects, scope, AJAX, DOM, ES6, JSON</li>
+                            <li>HTTP: fundamentals about the protocol: methods, headers, error codes</li>
+                            <li>OOP: classes, objects and inheritance, ES6+ data structures (Sets, Maps)</li>
+                            <li>GIT: learned the principles and basic commands</li>
+                            <li>REACT basics: render HTML, components, props, state, lifecycle, events.</li>
+                        </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -224,5 +229,274 @@ class MyCV extends HTMLElement {
 </div>`;
   }
 }
-
 customElements.define("my-cv", MyCV);
+
+class MyProjects extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+        <div class="col-12 d-flex flex-column align-items-center p-3">
+        <img
+          src="https://media-exp1.licdn.com/dms/image/C4D03AQHZK4ypw9j1Ww/profile-displayphoto-shrink_800_800/0/1659557711287?e=1665619200&v=beta&t=GvZCZXKoTqRZJSoGgCXTg5w8rxPry_Prl4-d0tzLQrM"
+          alt=""
+          class="profile-pic"
+        />
+        <div class="h2 name">Adelin Farcas</div>
+        <div class="location fw-light">Cluj-Napoca, Romania</div>
+      </div>
+      <div class="col-12 p-3 content">
+        <div class="title fs-2 fw-light mb-3 bg-transparent">Projects</div>
+        <div class="content fs-6 fw-light lh-lg">
+          <div class="container p-0 bg-transparent">
+            <div class="row p-3">
+              <div
+                class="col-md-6 col-lg-4 d-flex flex-column align-items-center justify-content-between project-card"
+              >
+                <img
+                  src="img/webstore.png"
+                  class="project-img rounded"
+                  alt=""
+                />
+                <div class="fs-3 fw-lighter">Outdoors Webstore</div>
+                <div class="btns d-flex justify-content-between gap-5 mb-5">
+                  <a
+                    href="https://github.com/adelinfarcas/plainJS/tree/main/webstore/main"
+                    target="_blank"
+                  >
+                    <button type="button" class="btn btn-outline-dark">
+                      <i class="bi bi-github"></i>
+                      Github
+                    </button>
+                  </a>
+                  <a
+                    href="https://adelinfarcas.github.io/plainJS/webstore/main/index.html"
+                    target="_blank"
+                  >
+                    <button type="button" class="btn btn-outline-primary">
+                      <i class="bi bi-display"></i>
+                      Render
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-lg-4 d-flex flex-column align-items-center justify-content-between project-card"
+              >
+                <img
+                  src="img/weatherApp.png"
+                  class="project-img rounded"
+                  alt=""
+                />
+                <div class="fs-3 fw-lighter">Weather App</div>
+                <div class="btns d-flex justify-content-between gap-5 mb-5">
+                  <a
+                    href="https://github.com/adelinfarcas/plainJS/tree/main/weatherApp"
+                    target="_blank"
+                  >
+                    <button type="button" class="btn btn-outline-dark">
+                      <i class="bi bi-github"></i>
+                      Github
+                    </button>
+                  </a>
+                  <a
+                    href="https://adelinfarcas.github.io/plainJS/weatherApp/index.html"
+                    target="_blank"
+                  >
+                    <button type="button" class="btn btn-outline-primary">
+                      <i class="bi bi-display"></i>
+                      Render
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-lg-4 d-flex flex-column align-items-center justify-content-between project-card"
+              >
+                <img
+                  src="img/phonebookApp.png"
+                  class="project-img rounded"
+                  alt=""
+                />
+                <div class="fs-3 fw-lighter">Phonebook App</div>
+                <div class="btns d-flex justify-content-between gap-5 mb-5">
+                  <a
+                    href="https://github.com/adelinfarcas/plainJS/tree/main/phonebook"
+                    target="_blank"
+                  >
+                    <button type="button" class="btn btn-outline-dark">
+                      <i class="bi bi-github"></i>
+                      Github
+                    </button>
+                  </a>
+                  <a
+                    href="https://adelinfarcas.github.io/plainJS/phonebook/index.html"
+                    target="_blank"
+                  >
+                    <button type="button" class="btn btn-outline-primary">
+                      <i class="bi bi-display"></i>
+                      Render
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-lg-4 d-flex flex-column align-items-center justify-content-between project-card"
+              >
+                <img
+                  src="img/shoppingList.png"
+                  class="project-img rounded"
+                  alt=""
+                />
+                <div class="fs-3 fw-lighter">Shopping List</div>
+                <div class="btns d-flex justify-content-between gap-5 mb-5">
+                  <a
+                    href="https://github.com/adelinfarcas/plainJS/tree/main/shoppingList"
+                    target="_blank"
+                  >
+                    <button type="button" class="btn btn-outline-dark">
+                      <i class="bi bi-github"></i>
+                      Github
+                    </button>
+                  </a>
+                  <a
+                    href="https://adelinfarcas.github.io/plainJS/shoppingList/index.html"
+                    target="_blank"
+                  >
+                    <button type="button" class="btn btn-outline-primary">
+                      <i class="bi bi-display"></i>
+                      Render
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        `;
+  }
+}
+customElements.define("my-projects", MyProjects);
+
+class AboutMe extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+        <div class="col-12 d-flex flex-column align-items-center p-3">
+        <img
+          src="https://media-exp1.licdn.com/dms/image/C4D03AQHZK4ypw9j1Ww/profile-displayphoto-shrink_800_800/0/1659557711287?e=1665619200&v=beta&t=GvZCZXKoTqRZJSoGgCXTg5w8rxPry_Prl4-d0tzLQrM"
+          alt=""
+          class="profile-pic"
+        />
+        <div class="h2 name">Adelin Farcas</div>
+        <div class="location fw-light">Cluj-Napoca, Romania</div>
+      </div>
+      <div class="col-12 p-3 content">
+        <div class="title fs-2 fw-light mb-3 bg-transparent">About me</div>
+        <div class="content fs-6 fw-light lh-lg">
+          <div class="container p-0 bg-transparent">
+            <div class="row p-3 gap-3">
+              <div>
+                I have been passionate about technologies and web development
+                since my time as a Bachelor’s degree student, when I was
+                building presentation and e-commerce Wordpress websites for
+                friends. I knew then that this is what I want to prusue next
+                in my career so I decided to take things more seriously. I
+                started learning HTML and CSS on my own and then started to
+                create simple UI’s and copy website designs for practice.
+              </div>
+              <div>
+                After I gained a solid knowledge of HTML and CSS I decided to
+                attend a Web Development course at “Scoala Informala de IT”,
+                with an primary focus on Javascript, OOP and React.js basics.
+              </div>
+              <div>
+                I am drawn to making easy to use, user-friendly websites and
+                web applications and I never run out of inspiration for new
+                projects.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        `;
+  }
+}
+customElements.define("about-me", AboutMe);
+
+class Contact extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+        <div class="col-12 d-flex flex-column align-items-center p-3">
+        <img
+          src="https://media-exp1.licdn.com/dms/image/C4D03AQHZK4ypw9j1Ww/profile-displayphoto-shrink_800_800/0/1659557711287?e=1665619200&v=beta&t=GvZCZXKoTqRZJSoGgCXTg5w8rxPry_Prl4-d0tzLQrM"
+          alt=""
+          class="profile-pic"
+        />
+        <div class="h2 name">Adelin Farcas</div>
+        <div class="location fw-light">Cluj-Napoca, Romania</div>
+      </div>
+      <div class="col-12 p-3 content">
+        <div class="title fs-2 fw-light mb-3 bg-transparent">Contact</div>
+        <div class="content fs-6 fw-light lh-lg">
+          <div class="container p-0 bg-transparent">
+            <div class="row flex-row">
+              <div
+                class="col-md-6 d-flex justify-content-start align-items-center px-5"
+              >
+                <i class="bi bi-envelope-paper display-1"></i>
+              </div>
+              <div class="col-md-6 d-flex gap-3 flex-column">
+                <div
+                  class="btns d-flex flex-row align-items-center justify-content-between px-5"
+                >
+                  <a
+                    href="https://github.com/adelinfarcas/plainJS"
+                    class="link-dark link"
+                    target="_blank"
+                  >
+                    <div
+                      class="github d-flex flex-row align-items-center gap-3"
+                    >
+                      <i class="bi bi-github fs-1"> </i>
+                      <div class="fs-4 fw-lighter align-middle">Github</div>
+                    </div>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/adelin-farca%C8%99-879498111/"
+                    target="_blank"
+                    class="link"
+                  >
+                    <div
+                      class="linkedIn d-flex flex-row align-items-center gap-3"
+                    >
+                      <i class="bi bi-linkedin fs-1 text-primary"></i>
+                      <div class="fs-4 fw-lighter align-middle">LinkedIn</div>
+                    </div>
+                  </a>
+                </div>
+                <div
+                  class="tel d-flex flex-row align-items-center justify-content-between px-5"
+                >
+                  <i class="bi bi-telephone fs-1"></i>
+
+                  <a href="tel:+40758709052" class="link-dark link"
+                    >+40 758 709 052</a
+                  >
+                </div>
+                <div
+                  class="tel d-flex flex-row align-items-center justify-content-between px-5"
+                >
+                  <i class="bi bi-envelope fs-1"></i>
+                  <a href="mailto:fvadelin@gmail.com" class="link-dark link"
+                    >fvadelin@gmail.com</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        `;
+  }
+}
+
+customElements.define("contact-me", Contact);

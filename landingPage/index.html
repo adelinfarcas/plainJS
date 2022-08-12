@@ -41,18 +41,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" onclick="draw('about-me');"
-                >Despre mine</a
+              <a class="nav-link active" href="#" onclick="draw('about-me');"
+                >About me</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" onclick="draw('my-cv');">CV</a>
+              <a class="nav-link" href="#" onclick="draw('my-cv');">CV</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" onclick="draw('projects');">Proiecte</a>
+              <a class="nav-link" href="#" onclick="draw('my-projects');"
+                >Projects</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" onclick="draw('contact');">Contact</a>
+              <a class="nav-link" href="#" onclick="draw('contact-me');"
+                >Contact</a
+              >
             </li>
           </ul>
         </div>
@@ -60,104 +64,7 @@
     </nav>
     <div class="container">
       <div class="row p-3">
-        <div class="col-12 d-flex flex-column align-items-center p-3">
-          <img
-            src="https://media-exp1.licdn.com/dms/image/C4D03AQHZK4ypw9j1Ww/profile-displayphoto-shrink_800_800/0/1659557711287?e=1665619200&v=beta&t=GvZCZXKoTqRZJSoGgCXTg5w8rxPry_Prl4-d0tzLQrM"
-            alt=""
-            class="profile-pic"
-          />
-          <div class="h2 name">Adelin Farcas</div>
-          <div class="location fw-light">Cluj-Napoca, Romania</div>
-        </div>
-        <div class="col-12 p-3 content">
-          <div class="title fs-2 fw-light mb-3 bg-transparent">Projects</div>
-          <div class="content fs-6 fw-light lh-lg">
-            <div class="container p-0 bg-transparent">
-              <div class="row p-3">
-                <div
-                  class="col-md-4 d-flex flex-column align-items-center justify-content-between project-card"
-                >
-                  <img
-                    src="img/webstore.png"
-                    class="project-img rounded"
-                    alt=""
-                  />
-                  <div class="fs-3 fw-lighter">Outdoors Webstore</div>
-                  <div class="btns d-flex justify-content-between gap-5 mb-5">
-                    <button type="button" class="btn btn-outline-dark">
-                      <i class="bi bi-github"></i>
-                      Github
-                    </button>
-                    <button type="button" class="btn btn-outline-primary">
-                      <i class="bi bi-display"></i>
-                      Render
-                    </button>
-                  </div>
-                </div>
-                <div
-                  class="col-md-4 d-flex flex-column align-items-center justify-content-between project-card"
-                >
-                  <img
-                    src="img/weatherApp.png"
-                    class="project-img rounded"
-                    alt=""
-                  />
-                  <div class="fs-3 fw-lighter">Weather App</div>
-                  <div class="btns d-flex justify-content-between gap-5 mb-5">
-                    <button type="button" class="btn btn-outline-dark">
-                      <i class="bi bi-github"></i>
-                      Github
-                    </button>
-                    <button type="button" class="btn btn-outline-primary">
-                      <i class="bi bi-display"></i>
-                      Render
-                    </button>
-                  </div>
-                </div>
-                <div
-                  class="col-md-4 d-flex flex-column align-items-center justify-content-between project-card"
-                >
-                  <img
-                    src="img/phonebookApp.png"
-                    class="project-img rounded"
-                    alt=""
-                  />
-                  <div class="fs-3 fw-lighter">Phonebook App</div>
-                  <div class="btns d-flex justify-content-between gap-5 mb-5">
-                    <button type="button" class="btn btn-outline-dark">
-                      <i class="bi bi-github"></i>
-                      Github
-                    </button>
-                    <button type="button" class="btn btn-outline-primary">
-                      <i class="bi bi-display"></i>
-                      Render
-                    </button>
-                  </div>
-                </div>
-                <div
-                  class="col-md-4 d-flex flex-column align-items-center justify-content-between project-card"
-                >
-                  <img
-                    src="img/shoppingList.png"
-                    class="project-img rounded"
-                    alt=""
-                  />
-                  <div class="fs-3 fw-lighter">Shopping List</div>
-                  <div class="btns d-flex justify-content-between gap-5 mb-5">
-                    <button type="button" class="btn btn-outline-dark">
-                      <i class="bi bi-github"></i>
-                      Github
-                    </button>
-                    <button type="button" class="btn btn-outline-primary">
-                      <i class="bi bi-display"></i>
-                      Render
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <about-me></about-me>
       </div>
     </div>
   </body>
